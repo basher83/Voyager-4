@@ -1,0 +1,49 @@
+{
+  "cognee_enhanced_templates": [
+    {
+      "name": "architecture_analysis_layered architecture_cognee_enhanced",
+      "type": "architecture_analysis",
+      "file": "architecture_analysis_layered architecture_cognee_enhanced.md",
+      "metadata_file": "architecture_analysis_layered architecture_cognee_enhanced_metadata.json",
+      "cognee_features": [
+        "architectural_relationships",
+        "code_patterns",
+        "dependency_insights",
+        "development_patterns"
+      ],
+      "enhancement_level": "full"
+    },
+    {
+      "name": "code_generation_layered_architecture_cognee_enhanced",
+      "type": "code_generation",
+      "file": "code_generation_layered_architecture_cognee_enhanced.md",
+      "metadata_file": "code_generation_layered_architecture_cognee_enhanced_metadata.json",
+      "cognee_features": [
+        "architectural_relationships",
+        "code_patterns",
+        "dependency_insights",
+        "development_patterns"
+      ],
+      "enhancement_level": "full"
+    },
+    {
+      "name": "bug_fixing_python_cognee_enhanced",
+      "type": "bug_fixing",
+      "file": "bug_fixing_python_cognee_enhanced.md",
+      "metadata_file": "bug_fixing_python_cognee_enhanced_metadata.json",
+      "cognee_features": [
+        "architectural_relationships",
+        "code_patterns",
+        "dependency_insights",
+        "development_patterns"
+      ],
+      "enhancement_level": "full"
+    }
+  ],
+  "enhancement_summary": {
+    "total_templates": 3,
+    "cognee_enhanced_count": 3,
+    "knowledge_graph_integration": "enabled",
+    "generation_timestamp": "2025-06-18T01:56:32.482670"
+  }
+}

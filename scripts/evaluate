@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+"""
+CLI entry point for running prompt evaluations.
+
+This script provides a command-line interface to the Cognee Framework
+evaluation capabilities, allowing users to evaluate prompts against
+test cases with various evaluation methods.
+"""
+
+import sys
+import argparse
+from pathlib import Path
+
+# Add the project root to the Python path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from cognee_framework.evaluation import BaseEvaluator, CogneeEnhancedEvaluator
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Evaluate Claude Code prompts using the Cognee Framework"
+    )
+    parser.add_argument(
+        "--prompt", 
+        required=True,
+        help="Path to the prompt template file"
+    )
+    parser.add_argument(
+        "--test-cases",
+        required=True, 
+        help="Path to the test cases JSON file"
+    )
+    parser.add_argument(
+        "--output",
+        help="Path to save evaluation results (optional)"
+    )
+    parser.add_argument(
+        "--enhanced",
+        action="store_true",
+        help="Use Cognee-enhanced evaluation with knowledge graphs"
+    )
+    parser.add_argument(
+        "--config",
+        help="Path to configuration file"
+    )
+    
+    args = parser.parse_args()
+    
+    # Select evaluator based on mode
+    if args.enhanced:
+        evaluator = CogneeEnhancedEvaluator(config_path=args.config)
+        print("🚀 Starting Cognee-Enhanced Evaluation...")
+    else:
+        evaluator = BaseEvaluator(config_path=args.config)
+        print("🚀 Starting Basic Evaluation...")
+    
+    # Run evaluation
+    try:
+        results = evaluator.evaluate(
+            prompt_path=args.prompt,
+            test_cases_path=args.test_cases,
+            output_path=args.output
+        )
+        
+        print("✅ Evaluation completed successfully!")
+        if args.output:
+            print(f"📊 Results saved to: {args.output}")
+        
+    except Exception as e:
+        print(f"❌ Evaluation failed: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

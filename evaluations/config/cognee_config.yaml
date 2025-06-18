@@ -1,0 +1,178 @@
+# Cognee Knowledge Graph Configuration
+# Configuration for AI-powered knowledge graph integration
+
+# Cognee Core Settings
+cognee:
+  data_root_directory: "data/cognee"  # Directory for knowledge graph storage
+  vector_database: "qdrant"           # Vector database backend (qdrant, lancedb, weaviate)
+  graph_database: "networkx"          # Graph database backend (networkx, neo4j)
+  llm_provider: "anthropic"           # LLM provider (anthropic, openai)
+  
+# Model Configuration
+llm_models:
+  default_model: "claude-3-haiku-20240307"     # Default model for knowledge processing
+  reasoning_model: "claude-3-opus-20240229"    # Model for complex reasoning tasks
+  embedding_model: "text-embedding-ada-002"    # Embedding model (if using OpenAI)
+  
+# Vector Database Settings
+vector_db:
+  qdrant:
+    host: "localhost"
+    port: 6333
+    collection_name: "cognee_knowledge"
+    vector_size: 1536
+    distance_metric: "cosine"
+  
+  lancedb:
+    uri: "data/cognee/lancedb"
+    table_name: "knowledge_vectors"
+  
+  weaviate:
+    url: "http://localhost:8080"
+    class_name: "KnowledgeNode"
+
+# Graph Database Settings  
+graph_db:
+  networkx:
+    save_path: "data/cognee/knowledge_graph.pkl"
+    
+  neo4j:
+    uri: "bolt://localhost:7687"
+    username: "neo4j"
+    password: "password"
+    database: "cognee"
+
+# Knowledge Processing Pipeline
+processing:
+  chunk_size: 1000                    # Text chunk size for processing
+  chunk_overlap: 200                  # Overlap between chunks
+  batch_size: 10                      # Batch size for processing
+  max_concurrent_requests: 3          # Max concurrent API requests
+  
+  # Entity extraction settings
+  entity_extraction:
+    enabled: true
+    confidence_threshold: 0.7
+    entity_types: ["PERSON", "ORG", "TECH", "CONCEPT", "METHOD"]
+  
+  # Relationship extraction settings
+  relationship_extraction:
+    enabled: true
+    confidence_threshold: 0.6
+    max_relationships_per_chunk: 10
+
+# Search Configuration
+search:
+  default_search_type: "GRAPH_COMPLETION"  # GRAPH_COMPLETION, RAG_COMPLETION, CODE, CHUNKS, INSIGHTS
+  max_results: 20                           # Maximum search results to return
+  similarity_threshold: 0.7                 # Minimum similarity for relevant results
+  
+  # Search result ranking
+  ranking:
+    relevance_weight: 0.4
+    recency_weight: 0.3
+    quality_weight: 0.3
+
+# Evaluation Integration Settings
+evaluation_integration:
+  enable_knowledge_enhancement: true        # Use Cognee to enhance prompt evaluation
+  knowledge_types:
+    - "codebase_understanding"             # Code structure and architecture knowledge
+    - "best_practices"                     # Coding and prompt engineering best practices
+    - "evaluation_insights"                # Historical evaluation results and patterns
+    - "domain_expertise"                   # Domain-specific knowledge from documentation
+  
+  # Automatic knowledge ingestion
+  auto_ingest:
+    enabled: true
+    sources:
+      - "anthropic-md/"                    # Anthropic documentation
+      - "docs/"                           # Project documentation  
+      - "templates/"                      # Prompt templates
+      - "evaluations/results/"            # Historical evaluation results
+    
+    update_frequency: "daily"             # How often to update knowledge (daily, weekly, manual)
+    incremental_updates: true             # Only process new/changed files
+
+# Performance Settings
+performance:
+  cache_embeddings: true                   # Cache embeddings to improve performance
+  cache_duration: 86400                    # Cache duration in seconds (24 hours)
+  memory_limit: "4GB"                      # Memory limit for processing
+  
+  # Optimization settings
+  optimization:
+    use_async_processing: true
+    enable_parallel_chunking: true
+    optimize_for_latency: false           # Optimize for speed vs. accuracy
+
+# Quality Control
+quality_control:
+  min_text_length: 50                     # Minimum text length for processing
+  max_text_length: 50000                  # Maximum text length for single processing
+  
+  # Content filtering
+  content_filters:
+    remove_code_comments: false           # Keep code comments for context
+    remove_whitespace: true               # Remove excessive whitespace
+    filter_low_quality: true              # Filter out low-quality content
+  
+  # Validation settings
+  validation:
+    validate_entities: true
+    validate_relationships: true
+    min_confidence_score: 0.5
+
+# Integration with Evaluation Framework
+evaluation_features:
+  prompt_enhancement:
+    enabled: true
+    enhancement_types:
+      - "context_injection"              # Inject relevant context from knowledge graph
+      - "example_retrieval"              # Retrieve relevant examples
+      - "best_practice_suggestions"      # Suggest improvements based on best practices
+  
+  result_analysis:
+    enabled: true
+    analysis_types:
+      - "knowledge_gap_detection"        # Identify missing knowledge in responses
+      - "consistency_checking"           # Check consistency with existing knowledge
+      - "quality_scoring"                # Score quality based on knowledge graph
+  
+  continuous_learning:
+    enabled: true
+    learn_from_evaluations: true         # Learn from evaluation results
+    update_knowledge_weights: true       # Update knowledge importance based on usage
+
+# Logging and Monitoring
+logging:
+  level: "INFO"                          # DEBUG, INFO, WARNING, ERROR
+  save_logs: true
+  log_file: "cognee_integration.log"
+  include_performance_metrics: true
+  
+  # Specific logging categories
+  categories:
+    knowledge_ingestion: true
+    search_queries: true  
+    performance_metrics: true
+    error_details: true
+
+# Development and Debug Settings
+debug:
+  enabled: false                         # Enable debug mode for development
+  save_intermediate_results: false       # Save intermediate processing results
+  verbose_logging: false                 # Enable verbose logging
+  profiling: false                       # Enable performance profiling
+
+# Security Settings
+security:
+  encrypt_stored_data: false             # Encrypt stored knowledge data
+  api_key_validation: true               # Validate API keys before processing
+  content_sanitization: true             # Sanitize content before processing
+  
+  # Access control
+  access_control:
+    require_authentication: false
+    allowed_users: []
+    rate_limiting: false

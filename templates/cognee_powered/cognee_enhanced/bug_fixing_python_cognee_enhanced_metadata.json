@@ -1,0 +1,58 @@
+{
+  "template": {
+    "name": "bug_fixing_python_cognee_enhanced",
+    "type": "bug_fixing",
+    "variables": [
+      "BUG_DESCRIPTION",
+      "ERROR_MESSAGE",
+      "COMPONENT",
+      "KNOWLEDGE_GRAPH_CONTEXT",
+      "RELATIONSHIP_INSIGHTS",
+      "PATTERN_AWARENESS"
+    ],
+    "use_cases": [
+      "Runtime error debugging",
+      "Logic error analysis",
+      "Framework-specific issue resolution",
+      "Knowledge graph-informed analysis"
+    ],
+    "specializations": {
+      "primary_language": "Python",
+      "framework_focus": "Django",
+      "architecture_pattern": "Layered Architecture",
+      "cognee_enhanced": true,
+      "knowledge_graph_integration": "enabled",
+      "relationship_awareness": "high"
+    },
+    "metadata": {
+      "generated_from": "codebase_analysis",
+      "debug_strategies_count": 7,
+      "testing_patterns": 1,
+      "generation_timestamp": "2025-06-18T01:56:32.481952",
+      "cognee_enhanced": true,
+      "enhancement_timestamp": "2025-06-18T01:56:32.481974",
+      "knowledge_graph_features": [
+        "architectural_relationships",
+        "code_patterns",
+        "dependency_insights",
+        "development_patterns"
+      ]
+    }
+  },
+  "cognee_enhancements": {
+    "enhanced": true,
+    "features": [
+      "architectural_relationships",
+      "code_patterns",
+      "dependency_insights",
+      "development_patterns"
+    ],
+    "enhancement_timestamp": "2025-06-18T01:56:32.481974",
+    "relationship_awareness": "high"
+  },
+  "usage_instructions": {
+    "basic_usage": "Use this template for bug_fixing with Cognee knowledge graph context",
+    "cognee_features": "This template includes relationship awareness and pattern recognition",
+    "variable_population": "Populate KNOWLEDGE_GRAPH_CONTEXT with relevant insights from Cognee search"
+  }
+}

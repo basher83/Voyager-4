@@ -1,0 +1,58 @@
+{
+  "generated_templates": [
+    {
+      "name": "architecture_analysis_unknown",
+      "type": "architecture_analysis",
+      "file": "architecture_analysis_unknown.md",
+      "metadata_file": "architecture_analysis_unknown_metadata.json",
+      "specializations": {
+        "pattern_focus": "General",
+        "technology_stack": "Python",
+        "complexity_level": "Very High"
+      },
+      "use_cases": [
+        "Codebase architecture review",
+        "Technical debt assessment",
+        "Architecture migration planning"
+      ]
+    },
+    {
+      "name": "code_generation_unknown",
+      "type": "code_generation",
+      "file": "code_generation_unknown.md",
+      "metadata_file": "code_generation_unknown_metadata.json",
+      "specializations": {
+        "architecture_pattern": "Unknown",
+        "primary_framework": "Django",
+        "language_focus": "Python"
+      },
+      "use_cases": [
+        "New feature implementation",
+        "Component scaffolding",
+        "Pattern-compliant code generation"
+      ]
+    },
+    {
+      "name": "bug_fixing_python",
+      "type": "bug_fixing",
+      "file": "bug_fixing_python.md",
+      "metadata_file": "bug_fixing_python_metadata.json",
+      "specializations": {
+        "primary_language": "Python",
+        "framework_focus": "Django",
+        "architecture_pattern": "Unknown"
+      },
+      "use_cases": [
+        "Runtime error debugging",
+        "Logic error analysis",
+        "Framework-specific issue resolution"
+      ]
+    }
+  ],
+  "generation_summary": {
+    "total_templates": 3,
+    "codebase_analyzed": "/Users/basher8383/dev/learning/Voyager-4",
+    "generation_timestamp": "2025-06-18T01:53:37.993943",
+    "architecture_type": "Unknown"
+  }
+}

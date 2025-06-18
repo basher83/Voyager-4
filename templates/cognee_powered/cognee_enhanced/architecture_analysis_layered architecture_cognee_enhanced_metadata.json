@@ -1,0 +1,58 @@
+{
+  "template": {
+    "name": "architecture_analysis_layered architecture_cognee_enhanced",
+    "type": "architecture_analysis",
+    "variables": [
+      "CODEBASE_PATH",
+      "ANALYSIS_FOCUS",
+      "TARGET_AUDIENCE",
+      "KNOWLEDGE_GRAPH_CONTEXT",
+      "RELATIONSHIP_INSIGHTS",
+      "PATTERN_AWARENESS"
+    ],
+    "use_cases": [
+      "Codebase architecture review",
+      "Technical debt assessment",
+      "Architecture migration planning",
+      "Knowledge graph-informed analysis"
+    ],
+    "specializations": {
+      "pattern_focus": "Layered Architecture",
+      "technology_stack": "Python",
+      "complexity_level": "Very High",
+      "cognee_enhanced": true,
+      "knowledge_graph_integration": "enabled",
+      "relationship_awareness": "high"
+    },
+    "metadata": {
+      "generated_from": "codebase_analysis",
+      "confidence": 0.7,
+      "insights_used": 2,
+      "generation_timestamp": "2025-06-18T01:56:32.481910",
+      "cognee_enhanced": true,
+      "enhancement_timestamp": "2025-06-18T01:56:32.481966",
+      "knowledge_graph_features": [
+        "architectural_relationships",
+        "code_patterns",
+        "dependency_insights",
+        "development_patterns"
+      ]
+    }
+  },
+  "cognee_enhancements": {
+    "enhanced": true,
+    "features": [
+      "architectural_relationships",
+      "code_patterns",
+      "dependency_insights",
+      "development_patterns"
+    ],
+    "enhancement_timestamp": "2025-06-18T01:56:32.481966",
+    "relationship_awareness": "high"
+  },
+  "usage_instructions": {
+    "basic_usage": "Use this template for architecture_analysis with Cognee knowledge graph context",
+    "cognee_features": "This template includes relationship awareness and pattern recognition",
+    "variable_population": "Populate KNOWLEDGE_GRAPH_CONTEXT with relevant insights from Cognee search"
+  }
+}

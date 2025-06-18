@@ -1,7 +1,10 @@
 # Claude Code Prompt Development Framework Dependencies
 
 # Core Claude Code SDK
-claude-code-sdk>=1.0.0
+claude-code-sdk>=0.0.10
+
+# AI Knowledge Graph Integration
+cognee>=0.1.43  # Direct SDK integration for advanced evaluation capabilities
 
 # HTTP and API clients
 anthropic>=0.25.0
@@ -33,6 +36,7 @@ flake8>=6.0.0
 pyyaml>=6.0
 python-dotenv>=1.0.0
 tqdm>=4.65.0
+jinja2>=3.1.0
 
 # Statistical Analysis
 scikit-learn>=1.3.0

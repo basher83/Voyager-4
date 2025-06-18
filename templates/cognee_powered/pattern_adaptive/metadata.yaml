@@ -1,0 +1,272 @@
+# Pattern-Adaptive Template Metadata
+
+template_info:
+  id: "cognee-pattern-adaptive-v1.0"
+  name: "Pattern-Adaptive Development Template"
+  category: "pattern-adaptive"
+  version: "1.0.0"
+  description: "AI-enhanced template for pattern-aware development that adapts to coding conventions and best practices"
+  created_date: "2025-06-18"
+  last_updated: "2025-06-18"
+  author: "Claude Code Cognee Integration"
+  
+template_type:
+  base_type: "development"
+  enhancement_level: "ai_enhanced"
+  intelligence_type: "pattern_learning"
+  complexity: "advanced"
+  
+cognee_integration:
+  requires_cognee: true
+  knowledge_graph_queries:
+    - query_type: "coding_patterns"
+      search_type: "CODE"
+      description: "Discover coding patterns and conventions"
+      
+    - query_type: "team_conventions"
+      search_type: "INSIGHTS"
+      description: "Identify team-specific conventions and standards"
+      
+    - query_type: "architectural_patterns"
+      search_type: "INSIGHTS"
+      description: "Map architectural patterns used in codebase"
+      
+    - query_type: "best_practices"
+      search_type: "GRAPH_COMPLETION"
+      description: "Identify best practices and successful approaches"
+      
+  graph_variables:
+    - name: "CODE_PATTERNS"
+      source: "coding_patterns"
+      format: "pattern_analysis"
+      
+    - name: "TEAM_CONVENTIONS"
+      source: "team_conventions"
+      format: "convention_mapping"
+      
+    - name: "ARCHITECTURAL_PATTERNS"
+      source: "architectural_patterns"
+      format: "pattern_catalog"
+      
+    - name: "BEST_PRACTICES"
+      source: "best_practices"
+      format: "practice_recommendations"
+
+template_configuration:
+  input_variables:
+    - name: "CONTEXT"
+      type: "string"
+      required: true
+      description: "Development context and task description"
+      
+    - name: "LANGUAGE"
+      type: "string"
+      required: true
+      description: "Primary programming language"
+      
+    - name: "SCOPE"
+      type: "string"
+      required: true
+      description: "Scope of development (feature, component, module)"
+      
+    - name: "TEAM_SIZE"
+      type: "string"
+      required: false
+      description: "Size of development team"
+      default: "small"
+      
+    - name: "PROJECT_PHASE"
+      type: "string"
+      required: false
+      description: "Current project phase (development, maintenance, refactoring)"
+      default: "development"
+      
+    - name: "QUALITY_LEVEL"
+      type: "string"
+      required: false
+      description: "Required quality level (development, staging, production)"
+      default: "production"
+      
+  output_format:
+    format_type: "structured_markdown"
+    sections:
+      - "Pattern Analysis"
+      - "Pattern-Adaptive Implementation Strategy"
+      - "Implementation Plan"
+      - "Code Implementation Examples"
+      - "Pattern Adherence Guidelines"
+      - "Quality Metrics and Validation"
+      - "Recommendations for Pattern Evolution"
+      
+quality_metrics:
+  success_criteria:
+    - metric: "pattern_compliance"
+      threshold: 0.90
+      description: "Compliance with identified patterns"
+      
+    - metric: "convention_adherence"
+      threshold: 0.95
+      description: "Adherence to team conventions"
+      
+    - metric: "code_consistency"
+      threshold: 0.85
+      description: "Overall code consistency rating"
+      
+    - metric: "best_practice_integration"
+      threshold: 0.80
+      description: "Integration of identified best practices"
+      
+  evaluation_methods:
+    - "automated_style_checking"
+    - "pattern_compliance_analysis"
+    - "convention_adherence_verification"
+    - "peer_review_quality_assessment"
+
+performance_characteristics:
+  expected_response_time: "30-60 seconds"
+  knowledge_graph_queries: 4
+  complexity_level: "medium-high"
+  resource_intensity: "medium"
+  
+  optimization_settings:
+    enable_caching: true
+    cache_duration: "12 hours"
+    parallel_queries: true
+    query_timeout: "20 seconds"
+
+use_cases:
+  primary_use_cases:
+    - "New feature development with pattern consistency"
+    - "Code refactoring to improve pattern compliance"
+    - "Team onboarding and convention learning"
+    - "Cross-team collaboration with consistent patterns"
+    - "Legacy code modernization"
+    
+  secondary_use_cases:
+    - "Code review preparation"
+    - "Style guide enforcement"
+    - "Best practice documentation"
+    - "Pattern evolution and refinement"
+    
+  anti_patterns:
+    - "Simple code generation (use base templates)"
+    - "One-off scripts (pattern consistency not needed)"
+    - "Experimental prototyping (flexibility more important)"
+
+adaptation_features:
+  pattern_learning:
+    - "Automatic style pattern detection"
+    - "Naming convention identification"
+    - "Code organization pattern analysis"
+    - "Error handling pattern recognition"
+    
+  convention_enforcement:
+    - "Real-time convention checking"
+    - "Automated style correction suggestions"
+    - "Convention compliance reporting"
+    - "Team standard alignment"
+    
+  best_practice_integration:
+    - "Context-aware best practice application"
+    - "Industry standard integration"
+    - "Team-specific practice adoption"
+    - "Practice effectiveness tracking"
+
+compatibility:
+  cognee_version: ">=1.0.0"
+  template_engine_version: ">=1.0.0"
+  required_dependencies:
+    - "jinja2"
+    - "yaml"
+    - "asyncio"
+    
+  language_support:
+    - "Python"
+    - "JavaScript/TypeScript"
+    - "Java"
+    - "C#"
+    - "Go"
+    - "Rust"
+    - "Ruby"
+    - "PHP"
+    - "Swift"
+    - "Kotlin"
+    
+  development_tools:
+    - "linters" 
+    - "formatters"
+    - "style_checkers"
+    - "pattern_analyzers"
+
+testing_configuration:
+  test_scenarios:
+    - name: "style_consistency"
+      description: "Test pattern adaptation to team style"
+      validation_criteria: ["indentation", "naming", "organization"]
+      
+    - name: "convention_compliance"
+      description: "Test adherence to team conventions"
+      validation_criteria: ["naming_patterns", "file_structure", "documentation"]
+      
+    - name: "best_practice_integration"
+      description: "Test integration of best practices"
+      validation_criteria: ["error_handling", "testing", "security"]
+      
+  validation_methods:
+    - "Automated style checking"
+    - "Pattern compliance analysis"
+    - "Convention adherence verification"
+    - "Best practice implementation review"
+
+learning_configuration:
+  pattern_recognition:
+    confidence_threshold: 0.75
+    minimum_occurrence_frequency: 3
+    pattern_stability_window: "7 days"
+    
+  adaptation_parameters:
+    learning_rate: 0.1
+    adaptation_aggressiveness: "medium"
+    convention_strictness: "high"
+    
+  feedback_integration:
+    user_feedback_weight: 0.6
+    automated_validation_weight: 0.4
+    peer_review_weight: 0.8
+
+enhancement_opportunities:
+  current_limitations:
+    - "Dependency on pattern visibility in knowledge graph"
+    - "May over-adapt to inconsistent patterns"
+    - "Limited support for evolving conventions"
+    
+  planned_improvements:
+    - "Integration with IDE extensions"
+    - "Real-time pattern suggestion"
+    - "Convention conflict resolution"
+    - "Pattern effectiveness tracking"
+    
+  extension_points:
+    - "Custom pattern definition"
+    - "Industry-specific pattern libraries"
+    - "Tool integration APIs"
+    - "Pattern sharing across teams"
+
+monitoring_and_analytics:
+  tracked_metrics:
+    - "pattern_compliance_rate"
+    - "convention_adherence_score"
+    - "code_consistency_improvement"
+    - "developer_satisfaction"
+    - "pattern_adaptation_accuracy"
+    
+  alerting_thresholds:
+    pattern_compliance_drop: 0.80
+    convention_adherence_drop: 0.85
+    consistency_degradation: 0.75
+    
+  analytics_integration:
+    - "Development workflow integration"
+    - "Code quality trend analysis"
+    - "Pattern evolution tracking"
+    - "Team productivity correlation"

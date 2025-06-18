@@ -1,0 +1,218 @@
+# Architecture-Aware Template Metadata
+
+template_info:
+  id: "cognee-architecture-aware-v1.0"
+  name: "Architecture-Aware Analysis Template"
+  category: "architecture-aware"
+  version: "1.0.0"
+  description: "AI-enhanced template for comprehensive architectural analysis using knowledge graph intelligence"
+  created_date: "2025-06-18"
+  last_updated: "2025-06-18"
+  author: "Claude Code Cognee Integration"
+  
+template_type:
+  base_type: "analysis"
+  enhancement_level: "ai_enhanced"
+  intelligence_type: "knowledge_graph"
+  complexity: "advanced"
+  
+cognee_integration:
+  requires_cognee: true
+  knowledge_graph_queries:
+    - query_type: "architectural_patterns"
+      search_type: "INSIGHTS"
+      description: "Discover architectural patterns and design structures"
+      
+    - query_type: "component_dependencies"
+      search_type: "CODE"
+      description: "Map component dependencies and interactions"
+      
+    - query_type: "technology_stack"
+      search_type: "GRAPH_COMPLETION"
+      description: "Analyze technology stack and frameworks"
+      
+  graph_variables:
+    - name: "ARCHITECTURAL_PATTERNS"
+      source: "architectural_patterns"
+      format: "structured_text"
+      
+    - name: "COMPONENT_RELATIONSHIPS"
+      source: "component_dependencies"
+      format: "relationship_map"
+      
+    - name: "TECHNOLOGY_STACK"
+      source: "technology_stack"
+      format: "technology_analysis"
+
+template_configuration:
+  input_variables:
+    - name: "CONTEXT"
+      type: "string"
+      required: true
+      description: "Context of the architectural analysis"
+      
+    - name: "SCOPE"
+      type: "string"
+      required: true
+      description: "Scope of the analysis (component, service, full_codebase)"
+      default: "full_codebase"
+      
+    - name: "FOCUS"
+      type: "string"
+      required: false
+      description: "Primary focus area (scalability, maintainability, performance)"
+      
+    - name: "AUDIENCE"
+      type: "string"
+      required: false
+      description: "Target audience for the analysis"
+      default: "development_team"
+      
+  output_format:
+    format_type: "structured_markdown"
+    sections:
+      - "Executive Summary"
+      - "Discovered Architectural Patterns"
+      - "Component Architecture"
+      - "Technology Ecosystem"
+      - "Architectural Quality Assessment"
+      - "Design Decisions Analysis"
+      - "Scalability & Maintainability"
+      - "Recommendations"
+      
+quality_metrics:
+  success_criteria:
+    - metric: "pattern_accuracy"
+      threshold: 0.85
+      description: "Accuracy of architectural pattern identification"
+      
+    - metric: "component_coverage"
+      threshold: 0.90
+      description: "Percentage of components analyzed"
+      
+    - metric: "recommendation_quality"
+      threshold: 4.0
+      description: "Quality rating of recommendations (1-5 scale)"
+      
+    - metric: "architectural_depth"
+      threshold: 0.80
+      description: "Depth and completeness of architectural analysis"
+      
+  evaluation_methods:
+    - "expert_review"
+    - "automated_pattern_validation"
+    - "component_coverage_analysis"
+    - "recommendation_implementability_check"
+
+performance_characteristics:
+  expected_response_time: "45-90 seconds"
+  knowledge_graph_queries: 3
+  complexity_level: "high"
+  resource_intensity: "medium-high"
+  
+  optimization_settings:
+    enable_caching: true
+    cache_duration: "24 hours"
+    parallel_queries: true
+    query_timeout: "30 seconds"
+
+use_cases:
+  primary_use_cases:
+    - "Comprehensive architectural analysis"
+    - "System design review and validation"
+    - "Architecture documentation generation"
+    - "Technical debt assessment"
+    - "Migration planning and analysis"
+    
+  secondary_use_cases:
+    - "Code review architectural insights"
+    - "Onboarding architectural understanding"
+    - "Architectural decision documentation"
+    - "System integration planning"
+    
+  anti_patterns:
+    - "Simple code structure analysis (use base templates instead)"
+    - "Performance optimization (use specialized performance templates)"
+    - "Security analysis (use security-focused templates)"
+
+compatibility:
+  cognee_version: ">=1.0.0"
+  template_engine_version: ">=1.0.0"
+  required_dependencies:
+    - "jinja2"
+    - "yaml"
+    - "asyncio"
+    
+  language_support:
+    - "Python"
+    - "JavaScript/TypeScript"
+    - "Java"
+    - "C#"
+    - "Go"
+    - "Rust"
+    - "Ruby"
+    
+  framework_support:
+    - "Django/Flask"
+    - "React/Vue/Angular"
+    - "Spring Boot"
+    - "ASP.NET"
+    - "Express.js"
+    - "Rails"
+
+testing_configuration:
+  test_scenarios:
+    - name: "microservices_architecture"
+      description: "Analysis of microservices-based architecture"
+      expected_patterns: ["microservices", "api_gateway", "service_mesh"]
+      
+    - name: "monolithic_architecture"
+      description: "Analysis of monolithic application architecture"
+      expected_patterns: ["layered_architecture", "mvc", "repository_pattern"]
+      
+    - name: "serverless_architecture"
+      description: "Analysis of serverless/cloud-native architecture"
+      expected_patterns: ["serverless", "event_driven", "cloud_native"]
+      
+  validation_criteria:
+    - "Pattern identification accuracy"
+    - "Component relationship mapping completeness"
+    - "Technology stack analysis accuracy"
+    - "Recommendation practicality"
+
+enhancement_opportunities:
+  current_limitations:
+    - "Limited support for legacy system patterns"
+    - "Dependency on knowledge graph completeness"
+    - "May miss undocumented architectural decisions"
+    
+  planned_improvements:
+    - "Integration with architectural linting tools"
+    - "Support for architectural compliance checking"
+    - "Integration with design pattern libraries"
+    - "Enhanced visualization capabilities"
+    
+  extension_points:
+    - "Custom pattern definition support"
+    - "Industry-specific architectural pattern libraries"
+    - "Integration with architectural documentation tools"
+    - "Support for architectural evolution tracking"
+
+monitoring_and_analytics:
+  tracked_metrics:
+    - "template_usage_frequency"
+    - "pattern_identification_accuracy"
+    - "user_satisfaction_scores"
+    - "recommendation_implementation_rate"
+    - "analysis_completion_time"
+    
+  alerting_thresholds:
+    pattern_accuracy_drop: 0.75
+    response_time_increase: "120 seconds"
+    user_satisfaction_drop: 3.5
+    
+  analytics_integration:
+    - "Performance dashboard integration"
+    - "Usage pattern analysis"
+    - "Success rate tracking"
+    - "User feedback integration"

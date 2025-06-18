@@ -183,6 +183,57 @@ def generate_synthetic_cases(base_examples, variations=5):
     return synthetic_cases
 ```
 
+## 🔧 Implementation Details
+
+### Your Project's Evaluation Framework
+
+This project includes a comprehensive evaluation framework with two main scripts:
+
+#### `evaluate_prompt.py` - Single Prompt Evaluation
+- **Multiple evaluation methods**: exact_match, consistency, quality, ROUGE
+- **Configurable thresholds**: accuracy >85%, consistency >0.8, quality >4.0/5
+- **Statistical analysis**: Chi-square tests, t-tests, cosine similarity
+- **Automated reporting**: JSON results + summary with pass/fail status
+
+#### `compare_prompts.py` - A/B Testing Framework
+- **Statistical significance testing**: Chi-square for accuracy, t-tests for quality
+- **Pairwise comparisons**: All prompt combinations analyzed
+- **Visualization**: Bar charts, radar plots, comparison matrices
+- **Confidence levels**: High/medium/low based on statistical significance
+
+### Configuration System
+
+The framework uses `evaluations/config/default_config.yaml` for:
+
+```yaml
+model: "claude-3-opus-20240229"
+max_tokens: 2048
+temperature: 0.0
+evaluation_methods: ["exact_match", "consistency", "quality"]
+metrics:
+  accuracy_threshold: 0.85
+  consistency_threshold: 0.8
+  quality_threshold: 4.0
+visualization:
+  save_plots: true
+  plot_format: "png"
+  plot_dpi: 300
+```
+
+### Usage Examples
+
+```bash
+# Single prompt evaluation
+python evaluations/scripts/evaluate_prompt.py \
+  --prompt templates/base/codebase-overview-template.md \
+  --test_cases test_cases/examples/codebase_understanding_examples.json
+
+# Compare multiple prompt variants
+python evaluations/scripts/compare_prompts.py \
+  --prompts templates/base/ templates/enhanced/ \
+  --test_cases test_cases/examples/codebase_understanding_examples.json
+```
+
 ## 📈 Evaluation Pipeline
 
 ### Complete Evaluation Script Template
@@ -282,39 +333,71 @@ with open(f"evaluation_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
     json.dump(results, f, indent=2)
 ```
 
-### A/B Testing Framework
+### Your Project's A/B Testing Framework
+
+The `compare_prompts.py` script provides advanced statistical comparison:
 
 ```python
-def compare_prompts(prompt_a: str, prompt_b: str, test_cases: List[Dict], 
-                   significance_level: float = 0.05) -> Dict:
-    """Compare two prompts with statistical significance testing"""
-    
-    results_a = evaluator.run_evaluation(prompt_a, test_cases, ["exact_match"])
-    results_b = evaluator.run_evaluation(prompt_b, test_cases, ["exact_match"])
-    
-    # Statistical significance test
-    from scipy.stats import chi2_contingency
-    
-    # Create contingency table
-    correct_a = results_a["results"]["exact_match"]["correct"]
-    correct_b = results_b["results"]["exact_match"]["correct"]
-    total = len(test_cases)
-    
-    contingency_table = [
-        [correct_a, total - correct_a],
-        [correct_b, total - correct_b]
-    ]
-    
-    chi2, p_value, dof, expected = chi2_contingency(contingency_table)
-    
-    return {
-        "prompt_a_accuracy": correct_a / total,
-        "prompt_b_accuracy": correct_b / total,
-        "improvement": (correct_b - correct_a) / total,
-        "statistically_significant": p_value < significance_level,
-        "p_value": p_value,
-        "recommendation": "Use Prompt B" if correct_b > correct_a and p_value < significance_level else "No significant difference"
-    }
+# Key features implemented in your framework:
+
+class PromptComparator:
+    def compare_prompts(self, prompt_paths: List[str], test_cases_path: str):
+        # 1. Evaluate each prompt individually
+        results = {}
+        for prompt_path in prompt_paths:
+            results[f"prompt_{i}"] = self.evaluator.evaluate_prompt(...)
+        
+        # 2. Statistical comparison with multiple methods
+        comparison_results = self._perform_statistical_comparison(results)
+        
+        # 3. Generate visualizations (bar charts, radar plots)
+        self._generate_visualizations(results, output_dir)
+        
+        # 4. Create comprehensive markdown report
+        self._generate_markdown_report(final_results, output_dir)
+
+    def _compare_two_prompts(self, metrics_a, metrics_b):
+        # Chi-square test for accuracy differences
+        chi2, p_value, dof, expected = chi2_contingency(contingency_table)
+        
+        # T-test for quality score comparisons
+        t_stat, p_value = ttest_ind(scores_a, scores_b)
+        
+        # Determine statistical significance
+        significant = p_value < self.config["significance_level"]
+        
+        return comparison_results
+
+# Advanced features:
+# - Pairwise comparison matrix for multiple prompts
+# - Overall ranking with weighted scoring
+# - Confidence levels (high/medium/low)
+# - Automated recommendation generation
+```
+
+### Statistical Methods Used
+
+| Method | Use Case | Implementation |
+|--------|----------|----------------|
+| **Chi-square test** | Accuracy differences | `chi2_contingency()` on correct/incorrect counts |
+| **T-test** | Quality score differences | `ttest_ind()` on LLM-graded scores |
+| **Cosine similarity** | Response consistency | Sentence transformer embeddings |
+| **ROUGE scores** | Summarization quality | `rouge_scorer` for text overlap |
+
+### Sample A/B Testing Workflow
+
+```bash
+# Compare baseline vs enhanced template
+python evaluations/scripts/compare_prompts.py \
+  --prompts templates/base/codebase-overview-template.md templates/enhanced/codebase-overview-template.md \
+  --test_cases test_cases/examples/codebase_understanding_examples.json \
+  --output-dir comparison_results_$(date +%Y%m%d)
+
+# Results include:
+# - comparison_results.json (full statistical analysis)
+# - comparison_report.md (executive summary)
+# - comparison_plots.png (visualizations)
+# - evaluation_1.json, evaluation_2.json (individual results)
 ```
 
 ## 📊 Metrics Dashboard
@@ -371,29 +454,51 @@ class MetricsDashboard:
 
 ## 🔄 Continuous Improvement
 
-### Evaluation Loop Best Practices
+### Evaluation-Driven Development Workflow
 
-1. **Regular Evaluation**: Run weekly evaluations on production prompts
-2. **Version Control**: Track prompt changes with git
-3. **Automated Testing**: CI/CD integration for prompt validation
-4. **Failure Analysis**: Document and learn from edge cases
-5. **Performance Monitoring**: Track degradation over time
+This project follows **evaluation-driven development** - all prompts must pass statistical validation:
 
-### Improvement Workflow
+1. **Template Development**: Start with `templates/base/`, enhance progressively
+2. **Test Case Creation**: Add scenarios to `test_cases/examples/`
+3. **Single Evaluation**: Test individual prompts with `evaluate_prompt.py`
+4. **A/B Comparison**: Compare variants with `compare_prompts.py`
+5. **Statistical Validation**: Ensure significance before deployment
+6. **Performance Monitoring**: Track accuracy, cost, and latency
+
+### Your Project's Improvement Workflow
 
 ```bash
-# 1. Create baseline evaluation
-python scripts/evaluate_prompt.py --prompt current_prompt.md --baseline
+# 1. Evaluate current template
+python evaluations/scripts/evaluate_prompt.py \
+  --prompt templates/base/codebase-overview-template.md \
+  --test_cases test_cases/examples/codebase_understanding_examples.json
 
-# 2. Test new prompt variant
-python scripts/evaluate_prompt.py --prompt new_variant.md --compare-to baseline
+# 2. Create enhanced variant
+# Edit templates/enhanced/codebase-overview-template.md
 
-# 3. If improvement is significant, deploy
-python scripts/deploy_prompt.py --prompt new_variant.md --environment production
+# 3. Compare statistically
+python evaluations/scripts/compare_prompts.py \
+  --prompts templates/base/codebase-overview-template.md templates/enhanced/codebase-overview-template.md \
+  --test_cases test_cases/examples/codebase_understanding_examples.json
 
-# 4. Monitor performance
-python scripts/monitor_metrics.py --environment production --alert-threshold 0.85
+# 4. Deploy if statistically significant improvement
+# Move enhanced template to production use
+
+# 5. Monitor with ongoing evaluations
+python evaluations/scripts/evaluate_prompt.py \
+  --prompt templates/enhanced/codebase-overview-template.md \
+  --test_cases test_cases/real-world/production_examples.json
 ```
+
+### Deployment Criteria
+
+A prompt variant is ready for deployment when:
+
+- ✅ **Accuracy**: ≥85% on test cases
+- ✅ **Consistency**: ≥0.8 cosine similarity
+- ✅ **Quality**: ≥4.0/5 LLM-graded score
+- ✅ **Statistical significance**: p-value <0.05 vs baseline
+- ✅ **No regressions**: Maintains performance on edge cases
 
 ## 🔗 Related Resources
 
@@ -401,7 +506,9 @@ python scripts/monitor_metrics.py --environment production --alert-threshold 0.8
 - [Develop Tests](../../anthropic-md/en/docs/test-and-evaluate/develop-tests.md)
 - [Prompt Engineering Guide](./prompt-engineering-guide.md)
 - [Evaluation Scripts](../../evaluations/scripts/)
+- [Technical Reference](../guides/evaluation-framework-reference.md)
+- [Cognee AI Insights](../guides/cognee-insights.md)
 
 ---
 
-*Comprehensive evaluation framework based on Anthropic's empirical testing best practices and proven measurement methodologies.*
+*Comprehensive evaluation framework based on Anthropic's empirical testing best practices, enhanced with AI-powered codebase intelligence from [Cognee](https://www.cognee.ai/) analysis.*

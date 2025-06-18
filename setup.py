@@ -71,17 +71,39 @@ def setup_environment():
         print(f"⚠️  Warning: Could not download sentence transformer models: {e}")
         print("   Models will be downloaded automatically when first used")
     
+    # Set up Cognee knowledge graph system
+    print("🔧 Setting up Cognee knowledge graph system...")
+    try:
+        # Check if Cognee MCP server is available
+        print("ℹ️  Cognee is available via MCP server integration")
+        print("   See docs/guides/cognee-insights.md for usage instructions")
+        
+        # Create data directories for Cognee (MCP server may use these)
+        cognee_dirs = [
+            "data/cognee",
+            "data/cognee/vectors", 
+            "data/cognee/graphs",
+            "data/cognee/cache"
+        ]
+        for directory in cognee_dirs:
+            Path(directory).mkdir(parents=True, exist_ok=True)
+        print("✅ Cognee data directories created")
+        
+    except Exception as e:
+        print(f"⚠️  Warning: Could not setup Cognee directories: {e}")
+        print("   Cognee MCP integration will work without local directories")
+    
     # Create necessary directories (if they don't exist)
     directories = [
         "evaluations/results",
-        "test-cases/real-world",
-        "test-cases/synthetic", 
-        "test-cases/edge-cases",
-        "prompts/codebase-understanding/examples",
-        "prompts/bug-fixing/examples",
-        "prompts/code-generation/examples",
+        "test_cases/real_world",
+        "test_cases/synthetic", 
+        "test_cases/edge_cases",
+        "prompts/codebase_understanding/examples",
+        "prompts/bug_fixing/examples",
+        "prompts/code_generation/examples",
         "prompts/testing/examples",
-        "prompts/project-management/examples"
+        "prompts/project_management/examples"
     ]
     
     for directory in directories:
@@ -102,6 +124,29 @@ CLAUDE_CODE_MAX_TOKENS=2048
 # Evaluation settings
 EVAL_PARALLEL_REQUESTS=false
 EVAL_RETRY_ATTEMPTS=3
+
+# Cognee Knowledge Graph Settings
+COGNEE_LLM_PROVIDER=anthropic
+COGNEE_DEFAULT_MODEL=claude-3-haiku-20240307
+COGNEE_REASONING_MODEL=claude-3-opus-20240229
+COGNEE_DATA_ROOT=data/cognee
+COGNEE_VECTOR_DB=qdrant
+COGNEE_GRAPH_DB=networkx
+COGNEE_ENABLE_CACHE=true
+COGNEE_LOG_LEVEL=INFO
+
+# Optional: Vector Database Settings (if using hosted services)
+# QDRANT_HOST=localhost
+# QDRANT_PORT=6333
+# QDRANT_API_KEY=your_qdrant_api_key
+
+# Optional: Neo4j Settings (if using Neo4j instead of NetworkX)
+# NEO4J_URI=bolt://localhost:7687
+# NEO4J_USERNAME=neo4j
+# NEO4J_PASSWORD=your_neo4j_password
+
+# Optional: OpenAI Settings (if using OpenAI for embeddings)
+# OPENAI_API_KEY=your_openai_api_key
 
 # Logging
 LOG_LEVEL=INFO
@@ -133,6 +178,11 @@ ENV/
 evaluations/results/
 *.log
 
+# Cognee Knowledge Graph Data
+data/cognee/
+*.pkl
+cognee_integration.log
+
 # IDE
 .vscode/
 .idea/
@@ -156,10 +206,13 @@ temp/
     print("\n🎉 Setup completed successfully!")
     print("\n📋 Next steps:")
     print("1. Add your ANTHROPIC_API_KEY to the .env file")
-    print("2. Review the ROADMAP.md for project milestones")
-    print("3. Explore the documentation in docs/ directory")
-    print("4. Run a test evaluation:")
-    print("   python evaluations/scripts/evaluate_prompt.py --prompt templates/base/codebase-overview-template.md --test-cases test-cases/examples/codebase_understanding_examples.json")
+    print("2. Test Cognee integration:")
+    print("   python evaluations/scripts/test_cognee_integration.py")
+    print("3. Review the ROADMAP.md for project milestones")
+    print("4. Explore the documentation in docs/ directory")
+    print("5. Run a test evaluation:")
+    print("   python evaluations/scripts/evaluate_prompt.py --prompt templates/base/codebase-overview-template.md --test_cases test_cases/examples/codebase_understanding_examples.json")
+    print("6. Configure Cognee settings in evaluations/config/cognee_config.yaml")
     
     return True
 

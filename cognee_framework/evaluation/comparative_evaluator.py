@@ -23,7 +23,7 @@ try:
     from scipy.stats import chi2_contingency, ttest_ind
     import matplotlib.pyplot as plt
     import seaborn as sns
-    from evaluate_prompt import PromptEvaluator
+    from .base_evaluator import PromptEvaluator
 except ImportError as e:
     print(f"Missing required dependency: {e}")
     print("Please install requirements: pip install -r requirements.txt")
@@ -509,7 +509,7 @@ def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(description="Compare Claude Code prompts")
     parser.add_argument("--prompts", nargs="+", required=True, help="Paths to prompt files to compare")
-    parser.add_argument("--test-cases", required=True, help="Path to test cases JSON file")
+    parser.add_argument("--test_cases", required=True, help="Path to test cases JSON file")
     parser.add_argument("--config", help="Path to comparison config file")
     parser.add_argument("--output-dir", help="Output directory for results")
     

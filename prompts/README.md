@@ -81,7 +81,7 @@ Use the evaluation framework in `/evaluations/` to:
 
 1. Browse category READMEs to understand available prompts
 2. Start with basic prompts for your use case
-3. Test with sample data from `/test-cases/`
+3. Test with sample data from `/test_cases/`
 4. Enhance prompts based on results
 5. Document successful patterns
 

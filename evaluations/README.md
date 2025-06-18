@@ -134,7 +134,7 @@ Following [Anthropic's success criteria framework](../anthropic-md/en/docs/test-
 ### Quick Start Scripts
 ```bash
 # Run basic evaluation
-python scripts/evaluate_prompt.py --prompt base/codebase-overview.md --test-cases test-cases/real-world/
+python scripts/evaluate_prompt.py --prompt base/codebase-overview.md --test_cases test_cases/real-world/
 
 # Compare prompts
 python scripts/compare_prompts.py --baseline base/ --variant enhanced/ --metrics accuracy,consistency
@@ -148,7 +148,7 @@ python scripts/generate_report.py --results results/latest/ --format html
 # evaluation_config.yaml
 evaluation:
   metrics: [accuracy, consistency, quality]
-  test_cases: test-cases/real-world/
+  test_cases: test_cases/real-world/
   iterations: 100
   confidence_level: 0.95
   

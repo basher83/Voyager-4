@@ -1,0 +1,135 @@
+{
+  "template": {
+    "name": "architecture_analysis_unknown",
+    "template_type": "architecture_analysis",
+    "content": "# Context-Aware Architecture Analysis\n\nYou are an expert software architect analyzing a codebase with deep understanding of the specific architectural patterns, technology stack, and organizational structure discovered in this repository.\n\n\n## Codebase-Specific Context\n\n**Architecture Type**: Unknown\n**Primary Language**: Python\n**Frameworks**: Django, Flask, React, Angular, Express, Spring\n**Complexity Level**: Very High\n\n\n## Intelligence-Enhanced Analysis Instructions\n\n### 1. Pattern-Aware Analysis\n- Apply general architectural analysis principles\n- Focus on code organization and structure\n\n### 2. Technology-Specific Insights\n- Follow PEP 8 standards and Python idioms\n- Consider asyncio patterns and context managers\n- Analyze package structure and imports\n- Analyze models, views, templates separation\n- Consider middleware and URL routing patterns\n- Analyze route organization and blueprint usage\n- Consider application factory patterns\n- Analyze component hierarchy and state management\n- Consider hooks and context patterns\n- Apply Angular best practices\n- Analyze middleware chain and route organization\n- Consider error handling patterns\n- Apply Spring best practices\n\n### 3. Codebase-Specific Analysis Steps\n\n#### Phase 1: Validate Discovered Patterns\n- Confirm the presence of **detected patterns** in the codebase\n- Assess how well the implementation follows pattern conventions\n- Identify any deviations or customizations from standard patterns\n\n#### Phase 2: Technology Stack Assessment\n- Analyze **Python** code quality and conventions\n- Evaluate **Django, Flask, React, Angular, Express, Spring** implementation\n- Assess integration between different technology components\n\n#### Phase 3: Structural Quality Evaluation\n- Review module organization (complexity: 0.82)\n- Analyze component relationships and dependencies\n- Evaluate testing coverage (patterns: Unit Testing)\n\n## Output Format\n\n```markdown\n## Architecture Analysis Report\n\n### Discovered Pattern Validation\n**Primary Pattern**: Unknown\n- **Implementation Quality**: [Excellent/Good/Fair/Poor]\n- **Pattern Adherence**: [High/Medium/Low]\n- **Customizations**: [List any deviations or customizations]\n\n### Technology Stack Assessment\n**Languages**: Python\n**Frameworks**: Django, Flask, React, Angular, Express, Spring\n- **Code Quality**: [Assessment of language-specific code quality]\n- **Framework Usage**: [How well frameworks are utilized]\n- **Integration**: [How well different technologies work together]\n\n### Structural Analysis\n**Complexity Metrics**:\n- Overall Complexity: 0.82\n- Documentation Coverage: 0.7%\n\n**Strengths**:\n- [List architectural strengths based on pattern analysis]\n\n**Improvement Areas**:\n- [List specific improvements based on detected patterns and complexity]\n\n### Recommendations\n**Immediate Actions**:\n1. [Specific recommendation based on pattern analysis]\n2. [Technology-specific improvement]\n\n**Long-term Improvements**:\n1. [Strategic architectural enhancement]\n2. [Pattern evolution recommendation]\n```\n\n## Context Variables\n- **CODEBASE_PATH**: {CODEBASE_PATH}\n- **ANALYSIS_FOCUS**: {ANALYSIS_FOCUS}\n- **TARGET_AUDIENCE**: {TARGET_AUDIENCE}\n\n---\n**Codebase to analyze:**\n",
+    "variables": [
+      "CODEBASE_PATH",
+      "ANALYSIS_FOCUS",
+      "TARGET_AUDIENCE"
+    ],
+    "use_cases": [
+      "Codebase architecture review",
+      "Technical debt assessment",
+      "Architecture migration planning"
+    ],
+    "specializations": {
+      "pattern_focus": "General",
+      "technology_stack": "Python",
+      "complexity_level": "Very High"
+    },
+    "metadata": {
+      "generated_from": "codebase_analysis",
+      "confidence": 0.5,
+      "insights_used": 0,
+      "generation_timestamp": "2025-06-18T01:53:37.993099"
+    }
+  },
+  "generation_info": {
+    "codebase_insights": {
+      "architecture_type": "Unknown",
+      "primary_languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "Django",
+        "Flask",
+        "React",
+        "Angular",
+        "Express",
+        "Spring"
+      ],
+      "dependencies": {},
+      "patterns": [],
+      "module_structure": {
+        "directories": {
+          "count": 9165,
+          "types": [
+            "tests",
+            "documentation",
+            "source"
+          ],
+          "main_dirs": [
+            "test_cases",
+            "evaluations",
+            "anthropic-md",
+            "docs",
+            "prompts",
+            "templates",
+            "venv",
+            "test_cases/edge-cases",
+            "test_cases/real-world",
+            "test_cases/examples"
+          ]
+        },
+        "modules": {
+          "count": 0,
+          "types": [],
+          "main_modules": []
+        },
+        "packages": {
+          "count": 0,
+          "types": [],
+          "main_packages": []
+        },
+        "configuration": {
+          "count": 2,
+          "types": [
+            "yaml_json"
+          ],
+          "main_files": [
+            ".mcp.json",
+            "evaluation_results_20250618_014720.json"
+          ]
+        }
+      },
+      "complexity_metrics": {
+        "overall_complexity": 0.82,
+        "file_count_complexity": 1.0,
+        "structure_complexity": 0.6
+      },
+      "documentation_coverage": 0.0072482405480605114,
+      "testing_patterns": [
+        "Unit Testing"
+      ]
+    },
+    "generation_timestamp": "2025-06-18T01:53:37.993356",
+    "generator_config": {
+      "analysis": {
+        "min_confidence_threshold": 0.6,
+        "max_patterns_per_category": 5,
+        "complexity_thresholds": {
+          "low": 0.3,
+          "medium": 0.6,
+          "high": 0.8
+        }
+      },
+      "templates": {
+        "base_template_dir": "templates/base",
+        "output_dir": "templates/generated",
+        "supported_types": [
+          "architecture_analysis",
+          "bug_fixing",
+          "code_generation",
+          "refactoring",
+          "testing",
+          "documentation"
+        ]
+      },
+      "cognee": {
+        "enable_code_graph": true,
+        "search_types": [
+          "CODE",
+          "INSIGHTS",
+          "GRAPH_COMPLETION"
+        ],
+        "analysis_depth": "comprehensive"
+      },
+      "optimization": {
+        "enable_auto_optimization": true,
+        "learning_rate": 0.1,
+        "feedback_integration": true
+      }
+    }
+  }
+}

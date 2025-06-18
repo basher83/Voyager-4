@@ -367,7 +367,7 @@ def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(description="Evaluate Claude Code prompts")
     parser.add_argument("--prompt", required=True, help="Path to prompt file")
-    parser.add_argument("--test-cases", required=True, help="Path to test cases JSON file")
+    parser.add_argument("--test_cases", required=True, help="Path to test cases JSON file")
     parser.add_argument("--config", help="Path to evaluation config file")
     parser.add_argument("--output", help="Output path for results")
     parser.add_argument("--methods", nargs="+", help="Evaluation methods to run", 

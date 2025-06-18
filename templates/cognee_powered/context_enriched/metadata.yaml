@@ -1,0 +1,137 @@
+# Context-Enriched Template Metadata
+
+template_info:
+  id: "cognee-context-enriched-v1.0"
+  name: "Context-Enriched Analysis Template"
+  category: "context-enriched"
+  version: "1.0.0"
+  description: "Business-focused analysis template with semantic understanding and stakeholder perspective integration"
+  created_date: "2025-06-18"
+  last_updated: "2025-06-18"
+  author: "Claude Code Cognee Integration"
+  
+template_type:
+  base_type: "business_analysis"
+  enhancement_level: "ai_enhanced"
+  intelligence_type: "semantic_understanding"
+  complexity: "advanced"
+  
+cognee_integration:
+  requires_cognee: true
+  knowledge_graph_queries:
+    - query_type: "business_context"
+      search_type: "GRAPH_COMPLETION"
+      description: "Analyze business processes and domain context"
+      
+    - query_type: "feature_relationships"
+      search_type: "INSIGHTS"
+      description: "Map feature interactions and business workflows"
+      
+    - query_type: "user_workflows"
+      search_type: "GRAPH_COMPLETION"
+      description: "Understand user journeys and interaction patterns"
+      
+    - query_type: "domain_requirements"
+      search_type: "INSIGHTS"
+      description: "Identify domain-specific requirements and constraints"
+      
+  graph_variables:
+    - name: "BUSINESS_CONTEXT"
+      source: "business_context"
+      format: "business_analysis"
+      
+    - name: "FEATURE_RELATIONSHIPS"
+      source: "feature_relationships"
+      format: "feature_mapping"
+      
+    - name: "USER_WORKFLOWS"
+      source: "user_workflows"
+      format: "workflow_analysis"
+      
+    - name: "DOMAIN_REQUIREMENTS"
+      source: "domain_requirements"
+      format: "requirements_analysis"
+
+template_configuration:
+  input_variables:
+    - name: "CONTEXT"
+      type: "string"
+      required: true
+      description: "Business context and analysis scenario"
+      
+    - name: "FEATURE"
+      type: "string"
+      required: false
+      description: "Specific feature or functionality being analyzed"
+      
+    - name: "SCOPE"
+      type: "string"
+      required: true
+      description: "Analysis scope (feature, workflow, domain)"
+      default: "feature_analysis"
+      
+    - name: "STAKEHOLDERS"
+      type: "string"
+      required: false
+      description: "Primary stakeholders involved in the analysis"
+      default: "product_team"
+      
+    - name: "SUCCESS_METRICS"
+      type: "array"
+      required: false
+      description: "Key success metrics for the business analysis"
+      
+  output_format:
+    format_type: "business_structured_markdown"
+    sections:
+      - "Business Context Analysis"
+      - "Feature Analysis"
+      - "User Experience Evaluation"
+      - "Domain and Compliance Analysis"
+      - "Business Impact Assessment"
+      - "Stakeholder-Specific Insights"
+      - "Recommendations"
+      - "Business Case for Changes"
+
+quality_metrics:
+  success_criteria:
+    - metric: "business_relevance"
+      threshold: 0.85
+      description: "Relevance to business objectives and outcomes"
+      
+    - metric: "stakeholder_coverage"
+      threshold: 0.80
+      description: "Coverage of relevant stakeholder perspectives"
+      
+    - metric: "actionability"
+      threshold: 0.90
+      description: "Actionability of recommendations and insights"
+      
+    - metric: "context_integration"
+      threshold: 0.85
+      description: "Integration of business context into analysis"
+      
+  evaluation_methods:
+    - "business_expert_review"
+    - "stakeholder_relevance_assessment"
+    - "recommendation_implementability_check"
+    - "context_utilization_analysis"
+
+use_cases:
+  primary_use_cases:
+    - "Feature development with business context"
+    - "Stakeholder communication and reporting"
+    - "Business impact assessment"
+    - "Cross-functional collaboration"
+    - "Product roadmap planning"
+    
+  secondary_use_cases:
+    - "User experience optimization"
+    - "Business process analysis"
+    - "Regulatory compliance assessment"
+    - "Market opportunity evaluation"
+    
+  anti_patterns:
+    - "Technical-only analysis (use architecture-aware instead)"
+    - "Pure code analysis (use pattern-adaptive instead)"
+    - "Performance optimization (use specialized templates)"

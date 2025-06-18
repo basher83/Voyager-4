@@ -1,0 +1,135 @@
+{
+  "template": {
+    "name": "bug_fixing_python",
+    "template_type": "bug_fixing",
+    "content": "# Context-Aware Bug Fixing Assistant\n\nYou are an expert debugger with deep knowledge of **Python** and **Django, Flask, React, Angular, Express, Spring** used in this codebase.\n\n## Codebase Context\n- **Architecture**: Unknown\n- **Primary Language**: Python\n- **Frameworks**: Django, Flask, React, Angular, Express, Spring\n- **Complexity**: Very High\n- **Testing Patterns**: Unit Testing\n\n## Technology-Specific Debugging Strategies\n\n**Python Debugging Strategies**:\n- Use pdb/ipdb for interactive debugging\n- Leverage logging with appropriate levels\n- Check for common Python gotchas (mutable defaults, late binding)\n- Analyze stack traces and exception chains\n\n\n## Pattern-Specific Debugging Guidance\nApply general debugging principles and component isolation\n\n## Debugging Protocol\n\n### Phase 1: Context-Aware Analysis\n1. **Understand the codebase architecture** (Unknown)\n2. **Identify the component layer** where the bug occurs\n3. **Consider framework-specific behaviors** (Django, Flask, React, Angular, Express, Spring)\n4. **Check for pattern-specific anti-patterns**\n\n### Phase 2: Systematic Investigation\n1. **Analyze error symptoms** in context of Python specifics\n2. **Trace execution flow** through architectural layers\n3. **Examine component interactions** and dependencies\n4. **Review framework-specific configurations** and setup\n\n### Phase 3: Solution Development\n1. **Apply technology best practices** for Python\n2. **Follow architectural patterns** (Unknown)\n3. **Ensure framework compatibility** \n4. **Validate with existing test patterns**\n\n## Output Format\n\n```markdown\n## Bug Analysis Report\n\n### Problem Classification\n- **Error Type**: [Runtime/Logic/Configuration/Integration]\n- **Component Layer**: [Presentation/Business/Data/Infrastructure]\n- **Severity**: [Critical/High/Medium/Low]\n\n### Context Analysis\n- **Architecture Impact**: [How this affects the Unknown pattern]\n- **Framework Considerations**: [Relevant to Django, Flask, React, Angular, Express, Spring]\n- **Technology Specifics**: [Language-specific considerations for Python]\n\n### Root Cause Analysis\n- **Primary Cause**: [Detailed explanation]\n- **Contributing Factors**: [Secondary issues]\n- **Pattern Violations**: [Any architectural pattern violations]\n\n### Solution Implementation\n**Immediate Fix**:\n```python\n// Context-aware fix implementation\n```\n\n**Testing Strategy**:\n- [How to test this fix given the existing testing patterns]\n- [Framework-specific testing approaches]\n\n**Prevention Measures**:\n- [How to prevent similar issues in this architecture]\n- [Pattern-specific best practices]\n```\n\n## Variables\n- **BUG_DESCRIPTION**: {BUG_DESCRIPTION}\n- **ERROR_MESSAGE**: {ERROR_MESSAGE}\n- **COMPONENT**: {COMPONENT}\n\n---\n**Bug to analyze:**\n",
+    "variables": [
+      "BUG_DESCRIPTION",
+      "ERROR_MESSAGE",
+      "COMPONENT"
+    ],
+    "use_cases": [
+      "Runtime error debugging",
+      "Logic error analysis",
+      "Framework-specific issue resolution"
+    ],
+    "specializations": {
+      "primary_language": "Python",
+      "framework_focus": "Django",
+      "architecture_pattern": "Unknown"
+    },
+    "metadata": {
+      "generated_from": "codebase_analysis",
+      "debug_strategies_count": 7,
+      "testing_patterns": 1,
+      "generation_timestamp": "2025-06-18T01:53:37.993135"
+    }
+  },
+  "generation_info": {
+    "codebase_insights": {
+      "architecture_type": "Unknown",
+      "primary_languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "Django",
+        "Flask",
+        "React",
+        "Angular",
+        "Express",
+        "Spring"
+      ],
+      "dependencies": {},
+      "patterns": [],
+      "module_structure": {
+        "directories": {
+          "count": 9165,
+          "types": [
+            "tests",
+            "documentation",
+            "source"
+          ],
+          "main_dirs": [
+            "test_cases",
+            "evaluations",
+            "anthropic-md",
+            "docs",
+            "prompts",
+            "templates",
+            "venv",
+            "test_cases/edge-cases",
+            "test_cases/real-world",
+            "test_cases/examples"
+          ]
+        },
+        "modules": {
+          "count": 0,
+          "types": [],
+          "main_modules": []
+        },
+        "packages": {
+          "count": 0,
+          "types": [],
+          "main_packages": []
+        },
+        "configuration": {
+          "count": 2,
+          "types": [
+            "yaml_json"
+          ],
+          "main_files": [
+            ".mcp.json",
+            "evaluation_results_20250618_014720.json"
+          ]
+        }
+      },
+      "complexity_metrics": {
+        "overall_complexity": 0.82,
+        "file_count_complexity": 1.0,
+        "structure_complexity": 0.6
+      },
+      "documentation_coverage": 0.0072482405480605114,
+      "testing_patterns": [
+        "Unit Testing"
+      ]
+    },
+    "generation_timestamp": "2025-06-18T01:53:37.993813",
+    "generator_config": {
+      "analysis": {
+        "min_confidence_threshold": 0.6,
+        "max_patterns_per_category": 5,
+        "complexity_thresholds": {
+          "low": 0.3,
+          "medium": 0.6,
+          "high": 0.8
+        }
+      },
+      "templates": {
+        "base_template_dir": "templates/base",
+        "output_dir": "templates/generated",
+        "supported_types": [
+          "architecture_analysis",
+          "bug_fixing",
+          "code_generation",
+          "refactoring",
+          "testing",
+          "documentation"
+        ]
+      },
+      "cognee": {
+        "enable_code_graph": true,
+        "search_types": [
+          "CODE",
+          "INSIGHTS",
+          "GRAPH_COMPLETION"
+        ],
+        "analysis_depth": "comprehensive"
+      },
+      "optimization": {
+        "enable_auto_optimization": true,
+        "learning_rate": 0.1,
+        "feedback_integration": true
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""
+CLI entry point for comparing prompt variants.
+
+This script provides a command-line interface to compare different
+prompt variants using statistical analysis and A/B testing methods.
+"""
+
+import sys
+import argparse
+from pathlib import Path
+
+# Add the project root to the Python path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from cognee_framework.evaluation import ComparativeEvaluator
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Compare Claude Code prompt variants using statistical analysis"
+    )
+    parser.add_argument(
+        "--baseline",
+        required=True,
+        help="Path to the baseline prompt or template directory"
+    )
+    parser.add_argument(
+        "--variant", 
+        required=True,
+        help="Path to the variant prompt or template directory"
+    )
+    parser.add_argument(
+        "--test-cases",
+        required=True,
+        help="Path to the test cases JSON file"
+    )
+    parser.add_argument(
+        "--output",
+        help="Path to save comparison results (optional)"
+    )
+    parser.add_argument(
+        "--config",
+        help="Path to configuration file"
+    )
+    
+    args = parser.parse_args()
+    
+    print("🔄 Starting Prompt Comparison...")
+    
+    # Initialize comparative evaluator
+    evaluator = ComparativeEvaluator(config_path=args.config)
+    
+    # Run comparison
+    try:
+        results = evaluator.compare(
+            baseline_path=args.baseline,
+            variant_path=args.variant,
+            test_cases_path=args.test_cases,
+            output_path=args.output
+        )
+        
+        print("✅ Comparison completed successfully!")
+        if args.output:
+            print(f"📊 Results saved to: {args.output}")
+        
+    except Exception as e:
+        print(f"❌ Comparison failed: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

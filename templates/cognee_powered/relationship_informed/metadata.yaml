@@ -1,0 +1,134 @@
+# Relationship-Informed Template Metadata
+
+template_info:
+  id: "cognee-relationship-informed-v1.0"
+  name: "Relationship-Informed Analysis Template"
+  category: "relationship-informed"
+  version: "1.0.0"
+  description: "System analysis template focused on component relationships, dependencies, and integration patterns"
+  created_date: "2025-06-18"
+  last_updated: "2025-06-18"
+  author: "Claude Code Cognee Integration"
+  
+template_type:
+  base_type: "system_analysis"
+  enhancement_level: "ai_enhanced"
+  intelligence_type: "relationship_mapping"
+  complexity: "advanced"
+  
+cognee_integration:
+  requires_cognee: true
+  knowledge_graph_queries:
+    - query_type: "component_relationships"
+      search_type: "CODE"
+      description: "Map component dependencies and interactions"
+      
+    - query_type: "dependency_analysis"
+      search_type: "INSIGHTS"
+      description: "Analyze dependency structures and coupling"
+      
+    - query_type: "integration_points"
+      search_type: "CODE"
+      description: "Identify API boundaries and communication patterns"
+      
+    - query_type: "data_flow_analysis"
+      search_type: "INSIGHTS"
+      description: "Trace data flow patterns throughout the system"
+      
+  graph_variables:
+    - name: "COMPONENT_RELATIONSHIPS"
+      source: "component_relationships"
+      format: "relationship_graph"
+      
+    - name: "DEPENDENCY_MAP"
+      source: "dependency_analysis"
+      format: "dependency_structure"
+      
+    - name: "INTEGRATION_POINTS"
+      source: "integration_points"
+      format: "integration_analysis"
+      
+    - name: "DATA_FLOW_ANALYSIS"
+      source: "data_flow_analysis"
+      format: "flow_mapping"
+
+template_configuration:
+  input_variables:
+    - name: "CONTEXT"
+      type: "string"
+      required: true
+      description: "System context and analysis scenario"
+      
+    - name: "COMPONENT"
+      type: "string"
+      required: false
+      description: "Target component for relationship analysis"
+      
+    - name: "SCOPE"
+      type: "string"
+      required: true
+      description: "Analysis scope (component, service, system)"
+      default: "component_analysis"
+      
+    - name: "CHANGE_TYPE"
+      type: "string"
+      required: false
+      description: "Type of change being assessed for impact"
+      
+    - name: "RISK_TOLERANCE"
+      type: "string"
+      required: false
+      description: "Risk tolerance level for changes"
+      default: "medium"
+      
+  output_format:
+    format_type: "relationship_structured_markdown"
+    sections:
+      - "Component Relationship Overview"
+      - "Dependency Analysis"
+      - "Integration Point Analysis"
+      - "Data Flow and Information Architecture"
+      - "Cross-Cutting Concerns Analysis"
+      - "Impact Analysis"
+      - "Integration and Communication Assessment"
+      - "Relationship Quality and Health"
+      - "Recommendations"
+      - "Risk Mitigation and Monitoring"
+
+quality_metrics:
+  success_criteria:
+    - metric: "relationship_completeness"
+      threshold: 0.90
+      description: "Completeness of relationship mapping"
+      
+    - metric: "dependency_accuracy"
+      threshold: 0.85
+      description: "Accuracy of dependency identification"
+      
+    - metric: "impact_assessment_quality"
+      threshold: 0.80
+      description: "Quality of change impact analysis"
+      
+    - metric: "integration_coverage"
+      threshold: 0.85
+      description: "Coverage of integration points and patterns"
+      
+  evaluation_methods:
+    - "relationship_validation"
+    - "dependency_verification"
+    - "impact_analysis_review"
+    - "integration_assessment"
+
+use_cases:
+  primary_use_cases:
+    - "Change impact assessment"
+    - "System integration planning"
+    - "Dependency analysis and optimization"
+    - "Cross-component debugging"
+    - "Architecture refactoring planning"
+    
+  secondary_use_cases:
+    - "Performance bottleneck identification"
+    - "Scalability planning"
+    - "Security boundary analysis"
+    - "Testing strategy development"

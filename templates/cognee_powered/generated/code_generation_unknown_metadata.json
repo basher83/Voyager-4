@@ -1,0 +1,135 @@
+{
+  "template": {
+    "name": "code_generation_unknown",
+    "template_type": "code_generation",
+    "content": "# Context-Aware Code Generation Assistant\n\nYou are an expert developer specializing in **Python** with deep knowledge of **Django, Flask, React, Angular, Express, Spring** used in this codebase.\n\n## Codebase Context\n- **Architecture**: Unknown\n- **Primary Language**: Python\n- **Frameworks**: Django, Flask, React, Angular, Express, Spring\n- **Patterns**: None detected\n- **Complexity**: Very High\n\n## Language & Framework Guidelines\n\n**Python Code Generation Guidelines**:\n- Follow PEP 8 formatting and naming conventions\n- Use type hints for better code clarity\n- Implement proper error handling with specific exceptions\n- Include docstrings following Google or NumPy style\n- Use context managers and proper resource cleanup\n\n\n## Architecture-Specific Structure Guidelines\nFollow general software engineering principles for code organization\n\n## Code Generation Protocol\n\n### Phase 1: Architecture Integration Analysis\n1. **Identify target layer** in Unknown architecture\n2. **Determine component relationships** and dependencies\n3. **Plan integration points** with existing codebase\n4. **Consider framework conventions** and patterns\n\n### Phase 2: Implementation Planning\n1. **Follow established patterns** from codebase analysis\n2. **Apply language best practices** for Python\n3. **Integrate with existing structure** and conventions\n4. **Plan testing approach** based on detected patterns\n\n### Phase 3: Code Generation\n1. **Generate implementation** following architectural patterns\n2. **Add appropriate documentation** (current coverage: 0.7%)\n3. **Include test scaffolding** if testing patterns exist\n4. **Ensure framework compatibility** and conventions\n\n## Output Format\n\n```markdown\n## Code Generation Plan\n\n### Architecture Integration\n- **Target Component**: [Which architectural layer/component]\n- **Integration Points**: [How it connects to existing code]\n- **Dependencies**: [Required dependencies and imports]\n\n### Implementation Strategy\n- **Pattern Compliance**: [How it follows Unknown]\n- **Framework Integration**: [How it uses Django, Flask, React, Angular, Express, Spring]\n- **Testing Approach**: [How to test in this codebase context]\n\n### Generated Code\n\n```python\n# Context-aware implementation\n# Follows Unknown pattern\n# Integrates with Django, Flask, React, Angular, Express, Spring\n\n// Implementation here\n```\n\n### Integration Instructions\n1. **File Placement**: [Where to place the generated code]\n2. **Dependencies**: [What needs to be imported/installed]\n3. **Configuration**: [Any framework-specific configuration needed]\n4. **Testing**: [How to test the generated code]\n\n### Next Steps\n- [How to extend this implementation]\n- [Integration with existing components]\n- [Framework-specific considerations]\n```\n\n## Variables\n- **FEATURE_DESCRIPTION**: {FEATURE_DESCRIPTION}\n- **COMPONENT_TYPE**: {COMPONENT_TYPE}\n- **INTEGRATION_REQUIREMENTS**: {INTEGRATION_REQUIREMENTS}\n\n---\n**Feature to implement:**\n",
+    "variables": [
+      "FEATURE_DESCRIPTION",
+      "COMPONENT_TYPE",
+      "INTEGRATION_REQUIREMENTS"
+    ],
+    "use_cases": [
+      "New feature implementation",
+      "Component scaffolding",
+      "Pattern-compliant code generation"
+    ],
+    "specializations": {
+      "architecture_pattern": "Unknown",
+      "primary_framework": "Django",
+      "language_focus": "Python"
+    },
+    "metadata": {
+      "generated_from": "codebase_analysis",
+      "pattern_count": 0,
+      "framework_count": 6,
+      "generation_timestamp": "2025-06-18T01:53:37.993121"
+    }
+  },
+  "generation_info": {
+    "codebase_insights": {
+      "architecture_type": "Unknown",
+      "primary_languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "Django",
+        "Flask",
+        "React",
+        "Angular",
+        "Express",
+        "Spring"
+      ],
+      "dependencies": {},
+      "patterns": [],
+      "module_structure": {
+        "directories": {
+          "count": 9165,
+          "types": [
+            "tests",
+            "documentation",
+            "source"
+          ],
+          "main_dirs": [
+            "test_cases",
+            "evaluations",
+            "anthropic-md",
+            "docs",
+            "prompts",
+            "templates",
+            "venv",
+            "test_cases/edge-cases",
+            "test_cases/real-world",
+            "test_cases/examples"
+          ]
+        },
+        "modules": {
+          "count": 0,
+          "types": [],
+          "main_modules": []
+        },
+        "packages": {
+          "count": 0,
+          "types": [],
+          "main_packages": []
+        },
+        "configuration": {
+          "count": 2,
+          "types": [
+            "yaml_json"
+          ],
+          "main_files": [
+            ".mcp.json",
+            "evaluation_results_20250618_014720.json"
+          ]
+        }
+      },
+      "complexity_metrics": {
+        "overall_complexity": 0.82,
+        "file_count_complexity": 1.0,
+        "structure_complexity": 0.6
+      },
+      "documentation_coverage": 0.0072482405480605114,
+      "testing_patterns": [
+        "Unit Testing"
+      ]
+    },
+    "generation_timestamp": "2025-06-18T01:53:37.993597",
+    "generator_config": {
+      "analysis": {
+        "min_confidence_threshold": 0.6,
+        "max_patterns_per_category": 5,
+        "complexity_thresholds": {
+          "low": 0.3,
+          "medium": 0.6,
+          "high": 0.8
+        }
+      },
+      "templates": {
+        "base_template_dir": "templates/base",
+        "output_dir": "templates/generated",
+        "supported_types": [
+          "architecture_analysis",
+          "bug_fixing",
+          "code_generation",
+          "refactoring",
+          "testing",
+          "documentation"
+        ]
+      },
+      "cognee": {
+        "enable_code_graph": true,
+        "search_types": [
+          "CODE",
+          "INSIGHTS",
+          "GRAPH_COMPLETION"
+        ],
+        "analysis_depth": "comprehensive"
+      },
+      "optimization": {
+        "enable_auto_optimization": true,
+        "learning_rate": 0.1,
+        "feedback_integration": true
+      }
+    }
+  }
+}

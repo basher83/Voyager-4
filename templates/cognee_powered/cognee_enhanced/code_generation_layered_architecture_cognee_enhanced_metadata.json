@@ -1,0 +1,58 @@
+{
+  "template": {
+    "name": "code_generation_layered_architecture_cognee_enhanced",
+    "type": "code_generation",
+    "variables": [
+      "FEATURE_DESCRIPTION",
+      "COMPONENT_TYPE",
+      "INTEGRATION_REQUIREMENTS",
+      "KNOWLEDGE_GRAPH_CONTEXT",
+      "RELATIONSHIP_INSIGHTS",
+      "PATTERN_AWARENESS"
+    ],
+    "use_cases": [
+      "New feature implementation",
+      "Component scaffolding",
+      "Pattern-compliant code generation",
+      "Knowledge graph-informed analysis"
+    ],
+    "specializations": {
+      "architecture_pattern": "Layered Architecture",
+      "primary_framework": "Django",
+      "language_focus": "Python",
+      "cognee_enhanced": true,
+      "knowledge_graph_integration": "enabled",
+      "relationship_awareness": "high"
+    },
+    "metadata": {
+      "generated_from": "codebase_analysis",
+      "pattern_count": 2,
+      "framework_count": 6,
+      "generation_timestamp": "2025-06-18T01:56:32.481934",
+      "cognee_enhanced": true,
+      "enhancement_timestamp": "2025-06-18T01:56:32.481971",
+      "knowledge_graph_features": [
+        "architectural_relationships",
+        "code_patterns",
+        "dependency_insights",
+        "development_patterns"
+      ]
+    }
+  },
+  "cognee_enhancements": {
+    "enhanced": true,
+    "features": [
+      "architectural_relationships",
+      "code_patterns",
+      "dependency_insights",
+      "development_patterns"
+    ],
+    "enhancement_timestamp": "2025-06-18T01:56:32.481971",
+    "relationship_awareness": "high"
+  },
+  "usage_instructions": {
+    "basic_usage": "Use this template for code_generation with Cognee knowledge graph context",
+    "cognee_features": "This template includes relationship awareness and pattern recognition",
+    "variable_population": "Populate KNOWLEDGE_GRAPH_CONTEXT with relevant insights from Cognee search"
+  }
+}
