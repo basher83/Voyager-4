@@ -1,0 +1,118 @@
+# Default Evaluation Configuration
+# Based on Anthropic's best practices for prompt evaluation
+
+# Model Configuration
+model: "claude-3-opus-20240229"
+max_tokens: 2048
+temperature: 0.0
+
+# Evaluation Methods
+evaluation_methods:
+  - "exact_match"
+  - "consistency" 
+  - "quality"
+  # - "rouge"  # Uncomment for summarization tasks
+
+# Success Criteria Thresholds
+metrics:
+  accuracy_threshold: 0.85      # 85% accuracy target
+  consistency_threshold: 0.8    # 0.8 cosine similarity target  
+  quality_threshold: 4.0        # 4.0/5.0 quality score target
+  rouge_l_threshold: 0.7        # 0.7 ROUGE-L F1 target
+
+# Comparison Configuration
+comparison:
+  significance_level: 0.05      # p < 0.05 for statistical significance
+  minimum_sample_size: 30       # Minimum test cases for reliable results
+  comparison_metrics:
+    - "accuracy"
+    - "consistency_score" 
+    - "average_quality"
+
+# Visualization Settings
+visualization:
+  save_plots: true
+  plot_format: "png"           # png, jpg, svg, pdf
+  plot_dpi: 300
+  figure_size: [12, 10]
+  color_palette: "Set2"
+
+# Performance Settings
+performance:
+  parallel_requests: false      # Enable for faster evaluation (uses more API calls)
+  retry_attempts: 3            # Number of retries for failed API calls
+  retry_delay: 1.0             # Delay between retries (seconds)
+  
+# Output Settings
+output:
+  save_individual_responses: true
+  save_detailed_results: true
+  generate_markdown_report: true
+  include_error_analysis: true
+
+# Claude Code Specific Settings
+claude_code:
+  use_sdk: false               # Use Claude Code SDK instead of direct API
+  sdk_options:
+    max_turns: 3
+    allowed_tools: ["Read", "Write", "Bash", "Grep", "Glob"]
+    permission_mode: "default"
+
+# Test Case Configuration  
+test_cases:
+  shuffle_order: true          # Randomize test case order
+  max_input_length: 4000       # Maximum characters in input
+  include_edge_cases: true     # Include challenging scenarios
+  balance_categories: true     # Ensure even distribution of test types
+
+# Quality Evaluation Settings
+quality_evaluation:
+  grading_model: "claude-3-haiku-20240307"  # Faster model for grading
+  grading_criteria:
+    - "accuracy"
+    - "clarity" 
+    - "completeness"
+    - "helpfulness"
+  use_rubric: true
+  rubric_path: "evaluations/config/quality_rubric.md"
+
+# Consistency Evaluation Settings
+consistency_evaluation:
+  similarity_model: "all-MiniLM-L6-v2"  # Sentence transformer model
+  similarity_threshold: 0.8
+  group_similar_inputs: true
+  max_group_size: 5
+
+# Error Analysis Settings
+error_analysis:
+  categorize_errors: true
+  error_categories:
+    - "format_error"
+    - "content_error" 
+    - "instruction_following"
+    - "context_misunderstanding"
+  save_error_examples: true
+  max_error_examples: 10
+
+# Reporting Settings
+reporting:
+  include_recommendations: true
+  recommendation_confidence_levels:
+    high: 0.95     # 95% confidence for strong recommendations
+    medium: 0.8    # 80% confidence for moderate recommendations  
+    low: 0.6       # 60% confidence for weak recommendations
+  
+  summary_sections:
+    - "executive_summary"
+    - "key_metrics"
+    - "statistical_analysis" 
+    - "recommendations"
+    - "detailed_results"
+    - "error_analysis"
+
+# Logging Configuration
+logging:
+  level: "INFO"                # DEBUG, INFO, WARNING, ERROR
+  save_logs: true
+  log_file: "evaluation.log"
+  include_timestamps: true

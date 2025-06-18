@@ -1,0 +1,62 @@
+[
+  {
+    "id": "codebase_overview_react",
+    "category": "codebase_understanding",
+    "input": "This is a React e-commerce application with the following structure:\n\nsrc/\n├── components/\n│   ├── Cart/\n│   │   ├── CartItem.js\n│   │   └── CartSummary.js\n│   ├── Product/\n│   │   ├── ProductCard.js\n│   │   ├── ProductList.js\n│   │   └── ProductDetail.js\n│   └── Layout/\n│       ├── Header.js\n│       └── Footer.js\n├── pages/\n│   ├── HomePage.js\n│   ├── ProductPage.js\n│   └── CheckoutPage.js\n├── store/\n│   ├── slices/\n│   │   ├── cartSlice.js\n│   │   └── productsSlice.js\n│   └── index.js\n├── services/\n│   ├── api.js\n│   └── paymentService.js\n└── utils/\n    ├── formatters.js\n    └── validators.js\n\nPlease provide an architectural overview of this codebase.",
+    "expected": "## Architecture Overview\n\n**Pattern**: Component-based SPA with Redux state management\n\n**Technologies**: React, Redux Toolkit, JavaScript\n\n**Key Components**:\n- `/src/components/` - Reusable UI components organized by feature\n- `/src/pages/` - Route-level components for main application views  \n- `/src/store/` - Redux state management with feature-based slices\n- `/src/services/` - External API and service integrations\n- `/src/utils/` - Shared utility functions\n\n**Architecture Pattern**: The application follows a feature-based component organization with centralized state management using Redux. Components are organized by domain (Cart, Product, Layout) with pages representing main application routes.",
+    "metadata": {
+      "difficulty": "basic",
+      "expected_elements": ["architecture pattern", "technologies", "component organization", "state management"]
+    }
+  },
+  {
+    "id": "codebase_overview_api",
+    "category": "codebase_understanding", 
+    "input": "This is a Node.js REST API with the following structure:\n\nserver/\n├── routes/\n│   ├── auth.js\n│   ├── users.js\n│   ├── products.js\n│   └── orders.js\n├── models/\n│   ├── User.js\n│   ├── Product.js\n│   └── Order.js\n├── middleware/\n│   ├── auth.js\n│   ├── validation.js\n│   └── errorHandler.js\n├── controllers/\n│   ├── authController.js\n│   ├── userController.js\n│   ├── productController.js\n│   └── orderController.js\n├── config/\n│   ├── database.js\n│   └── jwt.js\n├── utils/\n│   ├── logger.js\n│   └── helpers.js\n└── app.js\n\nAnalyze the architecture of this API server.",
+    "expected": "## Architecture Overview\n\n**Pattern**: RESTful API with layered MVC architecture\n\n**Technologies**: Node.js, Express.js, likely MongoDB/Mongoose or SQL database\n\n**Key Components**:\n- `/routes/` - API endpoint definitions and routing\n- `/controllers/` - Business logic and request/response handling\n- `/models/` - Data models and database schemas\n- `/middleware/` - Authentication, validation, and error handling\n- `/config/` - Database and JWT configuration\n- `/utils/` - Logging and helper utilities\n\n**Architecture Pattern**: Clean separation of concerns with routes handling HTTP requests, controllers containing business logic, models defining data structure, and middleware providing cross-cutting functionality. Follows RESTful conventions for API design.",
+    "metadata": {
+      "difficulty": "basic",
+      "expected_elements": ["MVC pattern", "REST API", "layered architecture", "separation of concerns"]
+    }
+  },
+  {
+    "id": "component_location_specific",
+    "category": "codebase_understanding",
+    "input": "In a React application, I need to find where user authentication is handled. The app structure includes:\n\n- Authentication logic\n- User profile management  \n- Protected route handling\n- Login/logout functionality\n\nGiven this typical React app structure, where would I likely find these authentication-related files?",
+    "expected": "**Authentication-related files are typically located in:**\n\n**Core Authentication Logic:**\n- `src/services/auth.js` - API calls for login/logout/registration\n- `src/utils/auth.js` - Authentication helper functions\n- `src/hooks/useAuth.js` - Custom hook for authentication state\n\n**State Management:**\n- `src/store/authSlice.js` or `src/context/AuthContext.js` - Authentication state\n- `src/store/userSlice.js` - User profile data\n\n**Components:**\n- `src/components/Auth/LoginForm.js` - Login component\n- `src/components/Auth/LogoutButton.js` - Logout functionality\n- `src/components/ProtectedRoute.js` - Route protection wrapper\n\n**Pages:**\n- `src/pages/LoginPage.js` - Login page\n- `src/pages/ProfilePage.js` - User profile management\n\n**Middleware/Guards:**\n- `src/guards/AuthGuard.js` - Route protection logic",
+    "metadata": {
+      "difficulty": "intermediate",
+      "expected_elements": ["multiple file locations", "authentication patterns", "React conventions"]
+    }
+  },
+  {
+    "id": "dependency_analysis",
+    "category": "codebase_understanding",
+    "input": "Looking at this package.json file:\n\n```json\n{\n  \"dependencies\": {\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"@reduxjs/toolkit\": \"^1.9.5\",\n    \"react-redux\": \"^8.1.1\",\n    \"react-router-dom\": \"^6.14.1\",\n    \"axios\": \"^1.4.0\",\n    \"styled-components\": \"^6.0.4\",\n    \"formik\": \"^2.4.2\",\n    \"yup\": \"^1.2.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^13.4.0\",\n    \"jest\": \"^29.6.1\",\n    \"eslint\": \"^8.44.0\",\n    \"prettier\": \"^2.8.8\"\n  }\n}\n```\n\nWhat can you tell me about this application's technology stack and architecture?",
+    "expected": "## Technology Stack Analysis\n\n**Core Framework:**\n- React 18.2.0 - Modern React with latest features (Concurrent Mode, Suspense)\n\n**State Management:**\n- Redux Toolkit + React-Redux - Centralized state management with modern Redux patterns\n\n**Routing:**\n- React Router DOM v6 - Client-side routing with latest API\n\n**HTTP Client:**\n- Axios - Promise-based HTTP client for API calls\n\n**Styling:**\n- Styled Components - CSS-in-JS styling solution\n\n**Form Handling:**\n- Formik + Yup - Form management with schema validation\n\n**Testing & Development:**\n- React Testing Library + Jest - Component testing\n- ESLint + Prettier - Code quality and formatting\n\n**Architectural Implications:**\n- Modern React SPA with robust state management\n- Form-heavy application (Formik suggests significant user input)\n- API-driven architecture (Axios for external data)\n- Component-based styling approach\n- Test-driven development setup",
+    "metadata": {
+      "difficulty": "intermediate", 
+      "expected_elements": ["technology identification", "architectural implications", "development practices"]
+    }
+  },
+  {
+    "id": "edge_case_complex_monorepo",
+    "category": "codebase_understanding",
+    "input": "This is a complex monorepo structure:\n\nroot/\n├── packages/\n│   ├── web-app/\n│   │   ├── src/\n│   │   └── package.json\n│   ├── mobile-app/\n│   │   ├── src/\n│   │   └── package.json\n│   ├── shared-components/\n│   │   ├── src/\n│   │   └── package.json\n│   ├── api-gateway/\n│   │   ├── src/\n│   │   └── package.json\n│   └── shared-utils/\n│       ├── src/\n│       └── package.json\n├── services/\n│   ├── user-service/\n│   ├── product-service/\n│   └── notification-service/\n├── infrastructure/\n│   ├── docker/\n│   ├── kubernetes/\n│   └── terraform/\n├── lerna.json\n├── package.json\n└── yarn.lock\n\nSome files are missing documentation and the build process seems complex. Analyze this architecture.",
+    "expected": "## Complex Monorepo Architecture Analysis\n\n**Repository Pattern**: Lerna-managed monorepo with microservices architecture\n\n**Frontend Applications**:\n- `web-app/` - Web application (likely React/Vue/Angular)\n- `mobile-app/` - Mobile application (React Native/Flutter)\n- `shared-components/` - Reusable UI component library\n- `shared-utils/` - Common utility functions\n\n**Backend Architecture**:\n- `api-gateway/` - API gateway for routing and authentication\n- `services/` - Microservices (user, product, notification)\n- Microservices pattern with domain separation\n\n**Infrastructure**:\n- Docker containerization\n- Kubernetes orchestration  \n- Terraform infrastructure as code\n\n**Package Management**:\n- Lerna for monorepo management\n- Yarn for dependency resolution\n- Shared dependencies across packages\n\n**Architectural Challenges**:\n- Complex build orchestration across multiple packages\n- Inter-package dependency management\n- Service communication and API contracts\n- Deployment coordination across services\n\n**Missing Documentation Issues**:\n- Build process documentation needed\n- Service API documentation\n- Development setup instructions\n- Deployment procedures",
+    "metadata": {
+      "difficulty": "advanced",
+      "expected_elements": ["monorepo analysis", "microservices", "infrastructure", "challenges identification"]
+    }
+  },
+  {
+    "id": "edge_case_legacy_mixed",
+    "category": "codebase_understanding", 
+    "input": "I'm looking at a legacy codebase that seems to mix multiple technologies:\n\n- Some files end in .php\n- There's a /js folder with jQuery code\n- A /react-components folder exists\n- There are .twig template files\n- A composer.json and package.json both exist\n- Some API endpoints return XML, others return JSON\n\nThis seems like a mess. What's likely happening here and how should I approach understanding it?",
+    "expected": "## Legacy Mixed-Technology Analysis\n\n**What's Happening:**\nThis is a **hybrid legacy application** undergoing gradual modernization - a common pattern in enterprise environments.\n\n**Technology Layers:**\n- **PHP Backend**: Core application logic (likely Symfony with Twig templating)\n- **Legacy Frontend**: jQuery-based interactions\n- **Modern Frontend**: React components being incrementally added\n- **Mixed APIs**: XML (legacy) and JSON (modern) endpoints\n- **Package Management**: Composer (PHP) + npm/yarn (JavaScript)\n\n**Migration Pattern:**\n- Gradual React adoption without full rewrite\n- API modernization in progress\n- Template system evolution (Twig → React)\n\n**Understanding Approach:**\n1. **Start with PHP/Backend**: Understand core business logic\n2. **Map API Endpoints**: Identify legacy vs modern patterns\n3. **Trace Data Flow**: Follow data from backend → templates → frontend\n4. **Identify React Islands**: Find where modern components are integrated\n5. **Check Build Process**: Understand how assets are compiled\n\n**Common Challenges:**\n- State management across jQuery/React boundaries\n- Asset bundling complexity\n- API versioning and compatibility\n- Testing strategy across technologies\n\n**Recommendation**: Focus on understanding the data flow and business logic first, then map the frontend integration points.",
+    "metadata": {
+      "difficulty": "advanced",
+      "expected_elements": ["legacy analysis", "migration patterns", "practical approach", "challenges identification"]
+    }
+  }
+]
