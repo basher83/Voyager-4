@@ -7,6 +7,7 @@ cognee:
   vector_database: "qdrant"           # Vector database backend (qdrant, lancedb, weaviate)
   graph_database: "networkx"          # Graph database backend (networkx, neo4j)
   llm_provider: "anthropic"           # LLM provider (anthropic, openai)
+  chunk_strategy: "smart"             # Smart chunking to respect token limits
   
 # Model Configuration
 llm_models:
@@ -44,10 +45,10 @@ graph_db:
 
 # Knowledge Processing Pipeline
 processing:
-  chunk_size: 1000                    # Text chunk size for processing
+  chunk_size: 2000                    # Text chunk size for processing (reduced for token limits)
   chunk_overlap: 200                  # Overlap between chunks
-  batch_size: 10                      # Batch size for processing
-  max_concurrent_requests: 3          # Max concurrent API requests
+  batch_size: 5                       # Reduced batch size to avoid rate limits
+  max_concurrent_requests: 1          # Reduced to avoid rate limiting
   
   # Entity extraction settings
   entity_extraction:
@@ -109,7 +110,7 @@ performance:
 # Quality Control
 quality_control:
   min_text_length: 50                     # Minimum text length for processing
-  max_text_length: 50000                  # Maximum text length for single processing
+  max_text_length: 6000                   # Reduced max text length to avoid token limits
   
   # Content filtering
   content_filters:
